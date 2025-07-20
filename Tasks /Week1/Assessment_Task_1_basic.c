@@ -15,9 +15,8 @@ int main()
   programming_hours = 30;
   networking_hours = 25;
 
-  // I used printf to display the total hours spent on each subject
-  printf("Total hours spent on each subject:\n");
-  printf("Math hours: %d\n", math_hours);
-  printf("Programming hours: %d\n", programming_hours);
-  printf("Networking hours: %d\n", networking_hours);
+  int total_hours = math_hours + programming_hours + networking_hours;
+
+  // I used printf to display the total weekly hours
+  printf("Total weekly study hours: %d\n", total_hours);
 }
