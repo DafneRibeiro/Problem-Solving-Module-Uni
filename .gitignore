@@ -1,0 +1,6 @@
+*.dSYM/
+tempCodeRunnerFile*
+*.plist
+*.yml
+Resources/
+Relocations/
