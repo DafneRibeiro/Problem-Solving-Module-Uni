@@ -5,3 +5,15 @@ tempCodeRunnerFile*
 Resources/
 Relocations/
 .fake
+.DS_Store
+.idea/
+*.iml
+*.swp
+*.swo
+*.log
+*.tmp
+*.bak
+*.orig
+*.swp
+*.swo
+*.class   
