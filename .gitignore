@@ -4,3 +4,4 @@ tempCodeRunnerFile*
 *.yml
 Resources/
 Relocations/
+.fake
