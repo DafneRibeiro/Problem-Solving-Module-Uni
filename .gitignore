@@ -44,3 +44,11 @@ Desktop.ini
 *.tgz
 *.rar
 *.7z
+
+# Arquivos executáveis sem extensão (CodeRunner, compilação C)
+Assessment_Task_[!*.]*
+test
+
+/bin/
+tempCodeRunnerFile*
+*.dSYM/
