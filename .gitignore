@@ -1,10 +1,13 @@
-*.dSYM/
+# Ignora todos os diretórios .dSYM diretamente no root ou em qualquer subpasta
+**/*.dSYM
 tempCodeRunnerFile*
 *.plist
 *.yml
 Resources/
 Relocations/
 .fake 
+info.plist
+
 
 
 # macOS
