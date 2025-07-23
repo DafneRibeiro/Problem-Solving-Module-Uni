@@ -4,4 +4,67 @@ tempCodeRunnerFile*
 *.yml
 Resources/
 Relocations/
-.fake
+.fake 
+
+
+# macOS
+.DS_Store
+.localized
+.Trashes
+.Spotlight-V100
+.AppleDouble
+*.icloud
+
+# VSCode
+.vscode/
+tempCodeRunnerFile
+
+# Swift / Xcode
+.build/
+.swift/
+Packages/
+xcuserdata/
+DerivedData/
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+*.xcworkspace
+*.dSYM
+*.playground
+
+# Logs
+*.log
+
+# Outros lixos comuns
+Thumbs.db
+EOF
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+# Linux         
+.cache/
+*.swp
+*.swo
+*.bak
+*.tmp
+*.orig
+*.old
+*.pid
+*.seed
+*.pid.lock      
+*.seed.lock
+*.log
+*.out
+*.gz
+*.zip
+*.tar     
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+*.bak
+*.swp   
+*.swo
+*.tmp
