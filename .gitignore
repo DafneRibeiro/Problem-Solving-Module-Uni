@@ -1,73 +1,46 @@
-# Ignora todos os diretórios .dSYM diretamente no root ou em qualquer subpasta
-**/*.dSYM
-tempCodeRunnerFile*
-*.plist
-*.yml
-Resources/
-Relocations/
-.fake 
-info.plist
-
-
-
 # macOS
 .DS_Store
-.localized
-.Trashes
-.Spotlight-V100
 .AppleDouble
+.Spotlight-V100
+.Trashes
+.localized
 *.icloud
 
 # VSCode
 .vscode/
-tempCodeRunnerFile
 
-# Swift / Xcode
-.build/
-.swift/
-Packages/
-xcuserdata/
-DerivedData/
-*.xcodeproj/*
-!*.xcodeproj/project.pbxproj
-*.xcworkspace
+# CodeRunner
+tempCodeRunnerFile*
+*.dSYM/
+**/*.dSYM/
+
+# Arquivos de build e símbolos (macOS, C)
+*.out
+*.o
 *.dSYM
-*.playground
-
-# Logs
+**/*.dSYM/
 *.log
+*.tmp
+*.bak
 
-# Outros lixos comuns
-Thumbs.db
-EOF
-
-# Windows
+# Backup / sistema
 Thumbs.db
 ehthumbs.db
 Desktop.ini
-$RECYCLE.BIN/
-# Linux         
 .cache/
 *.swp
 *.swo
-*.bak
-*.tmp
 *.orig
 *.old
 *.pid
 *.seed
-*.pid.lock      
-*.seed.lock
-*.log
-*.out
-*.gz
+*.lock
+
+# Arquivos comprimidos
 *.zip
-*.tar     
+*.tar
+*.gz
 *.tar.gz
 *.tgz
 *.rar
 *.7z
-*.bak
-*.swp   
-*.swo
-*.tmp
