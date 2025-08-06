@@ -1,19 +1,54 @@
-*.dSYM/
-tempCodeRunnerFile*
-*.plist
-*.yml
-Resources/
-Relocations/
-.fake
+# macOS
 .DS_Store
-.idea/
-*.iml
-*.swp
-*.swo
+.AppleDouble
+.Spotlight-V100
+.Trashes
+.localized
+*.icloud
+
+# VSCode
+.vscode/
+
+# CodeRunner
+tempCodeRunnerFile*
+*.dSYM/
+**/*.dSYM/
+
+# Arquivos de build e símbolos (macOS, C)
+*.out
+*.o
+*.dSYM
+**/*.dSYM/
 *.log
 *.tmp
 *.bak
-*.orig
+
+# Backup / sistema
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.cache/
 *.swp
 *.swo
-*.class   
+*.orig
+*.old
+*.pid
+*.seed
+*.lock
+
+# Arquivos comprimidos
+*.zip
+*.tar
+*.gz
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+
+# Arquivos executáveis sem extensão (CodeRunner, compilação C)
+# Ignora todos que começam com Assessment_Task_, mas mantém os .c
+Assessment_Task_*
+!*.c
+
+# Ignora outros executáveis
+test
