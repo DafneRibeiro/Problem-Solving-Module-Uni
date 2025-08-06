@@ -46,9 +46,9 @@ Desktop.ini
 *.7z
 
 # Arquivos executáveis sem extensão (CodeRunner, compilação C)
-Assessment_Task_[!*.]*
-test
+# Ignora todos que começam com Assessment_Task_, mas mantém os .c
+Assessment_Task_*
+!*.c
 
-/bin/
-tempCodeRunnerFile*
-*.dSYM/
+# Ignora outros executáveis
+test
