@@ -60,4 +60,12 @@ int main()
   {
     printf("Your study time increased from Week 1 to Week 2.\n");
   }
+  else if (total_hours_week2 < total_hours_week1)
+  {
+    printf("Your study time decreased from Week 1 to Week 2.\n");
+  }
+  else
+  {
+    printf("Your study time remained the same from Week 1 to Week 2.\n");
+  }
 }
