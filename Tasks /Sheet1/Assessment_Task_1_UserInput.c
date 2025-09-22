@@ -9,7 +9,9 @@ int main()
   int networking_hours;
 
   // I initialized the variables for the weekly study goals
-  int study_goal = 40; // Total study goal
+  int study_goal = 45; // Total study goal
+
+  // I understand that the study goal is not required in the task instructions to be input by the user, so I set it as a constant value, but it can be modified if needed.
 
   // I used printf to prompt the user for input
   printf("Enter hours spent on Math: ");

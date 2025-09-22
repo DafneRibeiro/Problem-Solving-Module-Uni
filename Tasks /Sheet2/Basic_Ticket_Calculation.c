@@ -5,7 +5,7 @@ int main()
   // This program creates a park ticket calculator that calculates the total based on user selection. In this section, I will only create the variables to store.
 
   // I initialized the variables for the tickets
-  char ride_type = 'W';   // T for Thrill, W fot Water and F for Family
+  char ride_type = 'F';   // T for Thrill, W fot Water and F for Family
   int ticket_price = 0;   // This will be calculated based on the ride type and ticket type
   char ticket_type = 'S'; // S for Standard and F for Fast Pass
 
