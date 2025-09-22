@@ -14,6 +14,7 @@ int main()
   double total_before = 0;
   double total_after = 0;
   double meal_price = 6.50;
+  double meal_cost = 0.0;
   double discount = 0.0;
 
   // Getting user input
@@ -59,9 +60,7 @@ int main()
 
   // If the user wants meal packages, I add the cost of meal packages to the total after discount
   if (addMeal == 'Y')
-  {
-    meal_price = meal_price * numTickets; // Total cost of meal packages
-  }
+    meal_cost = meal_price * (double)numTickets;
 
   // here is the total after discount and adding meal packages if any
   total_after = (total_before - discount) + meal_price;
@@ -86,7 +85,7 @@ int main()
 
   printf("Total Cost before Discount: £%.2f\n", total_before);
   printf("Discount Applied: £%.2f\n", discount);
-  printf("Meal Package Cost: £%.2f\n", meal_price);
+  printf("Meal Package Cost: £%.2f\n", meal_cost);
   printf("Total Cost after Discount and Meal Packages: £%.2f\n", total_after);
   return 0;
 }
