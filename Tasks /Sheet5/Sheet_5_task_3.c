@@ -1,46 +1,45 @@
 #include <stdio.h>
 
-int main(void)
+int main()
 {
-  // Temperature Logger (60–69)
-  // - Fixed-size array with a sentinel to mark "no data" slots.
-  // - Collect temps one-by-one; user can stop early by entering the sentinel.
-  // - Menu:
+  // Fixed-size array with a sentinel
+  // Collect temps one-by-one; user can stop early by entering the sentinel.
+  // Menu:
   //   1) Display all readings
   //   2) Overall average
   //   3) Highest & lowest
   //   4) Count days above / below-or-equal to a threshold
-  //   5) Weekly averages (every 7 entries == a week; last may be partial)
+  //   5) Weekly averages
   //   7) Exit
 
-  const int MAX_DAYS = 50;
-  const double SENTINEL = -1000.0; // sentinel marker (well outside realistic temperatures)
+  const int max_days = 50;
+  const double sentinel = -50.0; // sentinel marker making out of realistic range
 
-  double temps[MAX_DAYS];
+  double temps[max_days];
   int i;
 
-  // --- Initialize the array with sentinel to mark empty slots ---
-  for (i = 0; i < MAX_DAYS; i++)
-    temps[i] = SENTINEL;
+  // i initialize the array with sentinel to mark empty slots
+  for (i = 0; i < max_days; i++)
+    temps[i] = sentinel;
 
-  // --- Input: collect temperatures one by one up to MAX_DAYS or until sentinel typed ---
-  printf("Enter daily temperatures one by one (up to %d days).\n", MAX_DAYS);
-  printf("Type %.0f to finish early.\n\n", SENTINEL);
+  // Asked for user input: collect temperatures one by one up to max_days or until sentinel typed
+  printf("Enter daily temperatures one by one (up to %d days).\n", max_days);
+  printf("Type %.0f to finish early.\n\n", sentinel);
 
   int count = 0; // how many active readings we actually have
-  while (count < MAX_DAYS)
+  while (count < max_days)
   {
     double value;
-    printf("Enter temperature for Day %d (or %.0f to stop): ", count + 1, SENTINEL);
+    printf("Enter temperature for Day %d (or %.0f to stop): ", count + 1, sentinel);
 
     if (scanf("%lf", &value) != 1)
     {
-      // If a non-number is entered, stop gracefully for this level.
+      // If a non-number is entered it stops
       printf("Invalid input detected. Stopping entry.\n");
       break;
     }
 
-    if (value == SENTINEL)
+    if (value == sentinel)
     {
       // User chose to finish early
       break;
@@ -50,16 +49,13 @@ int main(void)
     count++;
   }
 
-  // Safety: if user entered nothing (count == 0), we still allow menu but make messages clear.
+  // Safety: if user entered nothing (count == 0), shows menu but with message
   if (count == 0)
   {
     printf("\nNo readings were entered. You can still open the menu; summaries will reflect zero data.\n");
   }
 
-  // --- Helper lambdas (C99 doesn't have lambdas; keep simple local blocks instead) ---
-  // We'll compute on the first 'count' entries and ignore SENTINEL slots.
-
-  // --- Menu loop ---
+  // Menu loop
   int choice = 0;
   do
   {
@@ -80,7 +76,7 @@ int main(void)
 
     if (choice == 1)
     {
-      // Option 1: display all active readings (up to 'count')
+      // Option 1: display all active readings
       if (count == 0)
       {
         printf("\nNo data to display.\n");
@@ -165,7 +161,7 @@ int main(void)
     }
     else if (choice == 5)
     {
-      // Option 5: weekly averages (7 entries per week)
+      // Option 5: weekly averages
       if (count == 0)
       {
         printf("\nNo data to compute weekly averages.\n");
@@ -191,7 +187,7 @@ int main(void)
           }
           else
           {
-            // final partial week (still valid to average)
+            // final partial week
             printf("Week %d (partial, %d day%s): %.2f\n",
                    week, take, (take == 1 ? "" : "s"), avg);
           }
@@ -207,7 +203,7 @@ int main(void)
     }
     else
     {
-      // Handle invalid menu choices gracefully
+      // Handle invalid menu choices
       printf("Please choose 1, 2, 3, 4, 5, or 7.\n");
     }
 

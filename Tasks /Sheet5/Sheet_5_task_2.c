@@ -2,45 +2,44 @@
 
 int main()
 {
-  // Temperature Logger (50–59):
-  // Adds Option 3 (highest & lowest), keeps menu loop until user exits,
-  // and handles invalid menu choices cleanly.
+  // Adds Option 3 (highest & lowest), keeps menu loop until user exits like before
+  // and handles invalid menu choices
 
-  const int MAX_DAYS = 30;
+  const int max_days = 30;
 
-  int days = 0;           // number of days to record (1..30)
-  double temps[MAX_DAYS]; // array holding the readings
+  int days = 0;           // number of days
+  double temps[max_days]; // array to store the readings
   int i;                  // loop index
 
-  // --- Ask how many days, with simple validation (range 1..30) ---
-  while (days < 1 || days > MAX_DAYS)
+  // here i ask how many days, with simple validation
+  while (days < 1 || days > max_days)
   {
     printf("How many days do you want to record temperatures for (1-30)? ");
     if (scanf("%d", &days) != 1)
     {
-      // If a non-number is entered, exit gracefully at this level.
+      // If a non-number is entered it stops
       printf("Invalid input. Exiting.\n");
       return 0;
     }
-    if (days < 1 || days > MAX_DAYS)
+    if (days < 1 || days > max_days)
     {
-      printf("Please enter a number between 1 and %d.\n", MAX_DAYS);
+      printf("Please enter a number between 1 and %d.\n", max_days);
     }
   }
 
-  // --- Read one temperature per day ---
+  // Read one temperature for eacj day
   for (i = 0; i < days; i++)
   {
     printf("Enter temperature for Day %d: ", i + 1);
     if (scanf("%lf", &temps[i]) != 1)
     {
-      // Keep the program resilient: default bad entries to 0.0 and continue.
+      // default bad entries to 0.0 and continue
       printf("Invalid reading. Setting Day %d to 0.0\n", i + 1);
       temps[i] = 0.0;
     }
   }
 
-  // --- Menu loop: runs until the user chooses 7 (Exit) ---
+  // Menu loop: runs until the user chooses 7
   int choice = 0;
   do
   {
@@ -62,7 +61,7 @@ int main()
       printf("\nAll temperature readings (%d day%s):\n", days, (days == 1 ? "" : "s"));
       for (i = 0; i < days; i++)
       {
-        printf("Day %2d: %.2f\n", i + 1, temps[i]); // %.2f keeps output tidy
+        printf("Day %2d: %.2f\n", i + 1, temps[i]); // %.2f decimals
       }
     }
     else if (choice == 2)
@@ -78,7 +77,7 @@ int main()
     else if (choice == 3)
     {
       // Option 3: highest and lowest
-      // I initialize both with the first reading to avoid fake sentinel values.
+      // I initialize both with the first reading
       double highest = temps[0];
       double lowest = temps[0];
 
@@ -100,7 +99,7 @@ int main()
     }
     else
     {
-      // Graceful handling of unsupported menu options
+      // Handle of unsupported menu options
       printf("Please choose 1, 2, 3, or 7.\n");
     }
 

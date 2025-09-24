@@ -2,42 +2,42 @@
 
 int main()
 {
-  // Temperature Logger (40–49):
-  // - Ask how many days (1..30)
-  // - Read one temperature per day into an array
-  // - Menu:
+  // For this temperature logger I need to prompt the user for the number of days
+  // Read one temperature per day into an array
+  // The menu has three options:
   //   1) Display all temperature readings
   //   2) Calculate and display overall average temperature
   //   7) Exit
 
   const int MAX_DAYS = 30;
 
-  int days = 0;           // how many days we will record (1..30)
-  double temps[MAX_DAYS]; // array to store the readings
-  int i;                  // loop index (reused below)
+  int days = 0;           // how many days we will record 1 -30
+  double temps[MAX_DAYS]; // i use this array to store the readings
+  int i;                  // loop index
 
-  // --- Ask for number of days with validation ---
+  // Ask for number of days with validation
   while (days < 1 || days > MAX_DAYS)
   {
     printf("How many days do you want to record temperatures for (1-30)? ");
     if (scanf("%d", &days) != 1)
     {
-      // If a non-numeric is entered, we stop gracefully.
-      // (For simplicity at this level; later we could flush input and retry.)
+      // If a non-numeric is entered, it stops
       printf("Invalid input. Exiting.\n");
       return 0;
     }
+
     if (days < 1 || days > MAX_DAYS)
     {
       printf("Please enter a number between 1 and %d.\n", MAX_DAYS);
     }
   }
 
-  // --- Read temperatures for each day ---
+  // in this section i read temperatures for each day and store in the array
   for (i = 0; i < days; i++)
   {
     printf("Enter temperature for Day %d: ", i + 1);
-    // I store temperatures as double to keep decimals (e.g., 21.75)
+
+    // I store temperatures as double to keep decimals
     if (scanf("%lf", &temps[i]) != 1)
     {
       printf("Invalid reading. Setting Day %d to 0.0\n", i + 1);
@@ -45,7 +45,7 @@ int main()
     }
   }
 
-  // --- Menu loop (options 1, 2, 7) ---
+  // Menu loop (options 1, 2, 7)
   int choice = 0;
   do
   {
@@ -78,7 +78,7 @@ int main()
       {
         sum += temps[i];
       }
-      double avg = sum / days; // days is in [1..30], so no divide-by-zero here
+      double avg = sum / days; // average calculation
       printf("\nAverage temperature over %d day%s: %.2f\n", days, (days == 1 ? "" : "s"), avg);
     }
     else if (choice == 7)

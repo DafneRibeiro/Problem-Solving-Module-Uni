@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h> // strcmp, strcpy
 
-// Helper: print playlist in one line, quoted and comma-separated
+// print playlist in one line, quoted and comma-separated
 void print_playlist(char playlist[][50], int n, const char *label)
 {
   printf("%s", label);
@@ -14,10 +14,10 @@ void print_playlist(char playlist[][50], int n, const char *label)
 
 int main(void)
 {
-  // Task 6 (50–59): single pass that can move the alphabetically earliest title to index 0.
+  // single pass that can move the alphabetically earliest title to index 0.
   // No output during the loop. Print BEFORE and AFTER only.
 
-  // Any starting order is fine for this step.
+  // The same playlist as in previous task
   char playlist[8][50] = {
       "Slayer - Raining Blood",
       "Type O Negative - Christian Woman",
@@ -30,11 +30,11 @@ int main(void)
 
   const int count = 8;
 
-  // Print BEFORE (required)
+  // Print BEFORE
   print_playlist(playlist, count, "Before single pass: ");
 
-  // --- Single pass: compare each title to index 0; swap if earlier alphabetically ---
-  // Nothing is printed inside this loop (per requirements).
+  // Single pass: compare each title to index 0; swap if earlier alphabetically
+  //  Nothing is printed inside this loop
   for (int i = 1; i < count; i++)
   {
     if (strcmp(playlist[i], playlist[0]) < 0)
@@ -47,7 +47,7 @@ int main(void)
     }
   }
 
-  // Print AFTER (required)
+  // Print AFTER
   print_playlist(playlist, count, "After single pass:  ");
 
   return 0;

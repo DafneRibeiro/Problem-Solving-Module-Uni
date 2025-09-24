@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h> // strcmp, strcpy
 
-// Helper: print playlist in one line with quotes
+// print playlist in one line with quotes
 void print_playlist(char playlist[][50], int n, const char *label)
 {
   printf("%s", label);
@@ -14,8 +14,8 @@ void print_playlist(char playlist[][50], int n, const char *label)
 
 int main(void)
 {
-  // Task 6 (60–69): Sort playlist alphabetically with nested loops.
-  // Bands: Slayer, Type O Negative, Alice in Chains, Black Sabbath.
+  // Sort playlist alphabetically with nested loops.
+  //  Bands: Slayer, Type O Negative, Alice in Chains, Black Sabbath.
 
   char playlist[8][50] = {
       "Slayer - Raining Blood",
@@ -32,7 +32,7 @@ int main(void)
   // Print before sorting
   print_playlist(playlist, count, "Before sorting: ");
 
-  // --- Selection sort implementation ---
+  // Selection sort implementation
   for (int i = 0; i < count - 1; i++)
   {
     int minIndex = i;

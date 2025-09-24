@@ -2,9 +2,9 @@
 
 int main()
 {
-  // Playlist Organizer (40–49)
-  // - Store 8 songs in any order (no sorting required)
-  // - Loop prints current song and the first song (index 0)
+  // Playlist Organizer
+  // Store 8 songs in any order (no sorting required) and I personally like chose some favorite metal songs.
+  // Loop prints current song and the first song (index 0)
 
   char playlist[8][50] = {
       "Slayer - Angel of Death",
